@@ -26,7 +26,7 @@ get_python_packages <- function() {
     py_run_string("
 # Explicitly check for packages in requirements.txt
 #required_packages = ['numpy', 'pandas', 'matplotlib']
-required_packages = ['numpy', 'pandas', 'matplotlib', 'dummy-pkg']
+required_packages = ['numpy', 'pandas', 'matplotlib', 'dummy_pkg']
 req_status = []
 
 for pkg in required_packages:
@@ -92,7 +92,7 @@ ui <- fluidPage(
       wellPanel(
         h3("Package Installation Requirements"),
         #p("Required Python packages: numpy, pandas, matplotlib"),
-        p("Required Python packages: numpy, pandas, matplotlib, dummy-pkg"),
+        p("Required Python packages: numpy, pandas, matplotlib, dummy_pkg"),
         p("Check below to see if these packages are properly installed.")
       )
     )
