@@ -1,6 +1,6 @@
 library(shiny)
 library(reticulate)
-library(naniar)
+#library(naniar)
 library(DT)
 
 # Initialize Python first
