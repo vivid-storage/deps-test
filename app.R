@@ -5,7 +5,7 @@ library(reticulate)
 reticulate::py_discover_config()
 
 # Define required R packages
-required_r_packages <- c("shiny", "naniar", "ggplot2", "DT", "bslib")
+required_r_packages <- c("shiny", "ggplot2", "bslib")
 
 # Function to get R packages and versions
 get_r_packages <- function() {
