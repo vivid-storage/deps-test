@@ -1,8 +1,8 @@
-numpy==2.2.3
-#numpy
-pandas==2.2.2
-#pandas
-matplotlib==3.10.0
-#matplotlib
+#numpy==2.2.3
+numpy
+#pandas==2.2.2
+pandas
+#matplotlib==3.10.0
+matplotlib
 git+https://github.com/vivid-storage/private-package.git
 
