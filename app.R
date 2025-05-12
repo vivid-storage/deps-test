@@ -1,5 +1,7 @@
 library(shiny)
 library(reticulate)
+library(naniar)
+library(DT)
 
 # Initialize Python first
 reticulate::py_discover_config()
