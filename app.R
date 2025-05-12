@@ -10,14 +10,22 @@ required_r_packages <- c("shiny", "naniar", "ggplot2", "DT", "bslib")
 # Function to get R packages and versions
 get_r_packages <- function() {
   pkgs <- as.data.frame(installed.packages()[, c("Package", "Version")])
-  pkgs <- pkgs[order(pkgs$Package), ]
+  
+  # Split into required and non-required packages
+  required_pkgs <- pkgs[pkgs$Package %in% required_r_packages, ]
+  other_pkgs <- pkgs[!pkgs$Package %in% required_r_packages, ]
+  
+  # Sort each group
+  required_pkgs <- required_pkgs[order(required_pkgs$Package), ]
+  other_pkgs <- other_pkgs[order(other_pkgs$Package), ]
   
   # Add "required" label to required packages
-  pkgs$Required <- ifelse(pkgs$Package %in% required_r_packages, "(required)", "")
-  pkgs$Package <- paste0(pkgs$Package, " ", pkgs$Required)
-  pkgs$Required <- NULL
+  required_pkgs$Package <- paste0(required_pkgs$Package, " (required)")
   
-  return(pkgs)
+  # Combine required (first) and non-required packages
+  combined_pkgs <- rbind(required_pkgs, other_pkgs)
+  
+  return(combined_pkgs)
 }
 
 # Function to get Python packages and versions
